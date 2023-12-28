@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Caja de Regalo Virtual</title>
+    <style>
+        .caja {
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+            background: url('caja-cerrada.png') no-repeat center center;
+            background-size: cover;
+        }
+        .sorpresa {
+            display: none;
+            width: 200px;
+            height: 200px;
+            background: url('sorpresa.png') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
-    <div class="caja" id="caja" onclick="abrirCaja()">
-        <!-- Contenido visible de la caja -->
-        <img src="caja_cerrada.png" alt="Caja cerrada">
-    </div>
-    <div class="sorpresa" id="sorpresa">
-        <!-- Contenido oculto de la caja -->
-        <img src="sorpresa.png" alt="Sorpresa">
-    </div>
-    <script src="script.js"></script>
+    <div class="caja" id="caja" onclick="abrirCaja()"></div>
+    <div class="sorpresa" id="sorpresa"></div>
+
+    <script>
+        function abrirCaja() {
+            document.getElementById('caja').style.display = 'none';
+            document.getElementById('sorpresa').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
